@@ -1,0 +1,11 @@
+import javax.naming.Binding
+
+// Generated file. Do not edit.
+include ':.android'
+
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir.parentFile,
+        'flutter_android_ios/flutter_module/flutter_module/.android/include_flutter.groovy'
+))
