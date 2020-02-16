@@ -9,16 +9,11 @@ target 'ios_app' do
   use_frameworks!
 
   # Pods for ios_app
-
   target 'ios_appTests' do
     inherit! :search_paths
     # Pods for testing
   end
-
   target 'ios_appUITests' do
     # Pods for testing
   end
-
-
-
 end
