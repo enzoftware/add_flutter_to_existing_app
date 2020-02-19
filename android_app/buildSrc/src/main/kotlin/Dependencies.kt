@@ -14,6 +14,8 @@ object Dependencies {
         const val retrofit = "2.6.1"
         const val okhttp = "4.2.0"
         const val groupie = "2.5.1"
+        const val koin = "2.0.1"
+        const val gson = "2.6.1"
 
         // library (test)
         const val junit = "4.12"
@@ -59,11 +61,14 @@ object Dependencies {
     val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Version.dagger}"
     val daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:${Version.dagger}"
 
+    val koin = "org.koin:koin-android-viewmodel:${Version.koin}"
+
     // network
     val retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
     val retrofitConverter = "com.squareup.retrofit2:converter-gson:${Version.retrofit}"
     val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Version.okhttp}"
     val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Version.okhttp}"
+    val gson = "com.squareup.retrofit2:converter-gson:${Version.gson}"
 
     // storage
     val roomRuntime = "androidx.room:room-runtime:${Version.room}"
