@@ -1,5 +1,8 @@
 package com.enzoftware.androidappmodule.network
 
+import com.enzoftware.androidappmodule.model.SimpsonsQuote
+import retrofit2.http.GET
+
 
 /**
  * Created by Enzo Lizama Paredes on 2020-02-16.
@@ -7,7 +10,8 @@ package com.enzoftware.androidappmodule.network
  */
 
 
-// BASE_URL : https://thesimpsonsquoteapi.glitch.me/quotes?count=10
-interface ApiService {
 
+interface ApiService {
+    @GET("quotes?count=10")
+    suspend fun getSimpsonsQuotes(): List<SimpsonsQuote>
 }
