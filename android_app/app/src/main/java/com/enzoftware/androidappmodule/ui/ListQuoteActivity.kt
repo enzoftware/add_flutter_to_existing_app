@@ -8,7 +8,7 @@ import com.enzoftware.androidappmodule.R
 import io.flutter.embedding.android.FlutterActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class ListQuoteActivity : AppCompatActivity() {
 
 //    lateinit var flutterEngine : FlutterEngine
 
