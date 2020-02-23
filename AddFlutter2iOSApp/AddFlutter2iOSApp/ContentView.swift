@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  ios_app
+//  AddFlutter2iOSApp
 //
-//  Created by Enzo Lizama on 2/15/20.
+//  Created by Enzo Lizama on 2/23/20.
 //  Copyright © 2020 Enzo Lizama. All rights reserved.
 //
 

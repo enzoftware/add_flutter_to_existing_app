@@ -1,14 +1,12 @@
 //
 //  AppDelegate.swift
-//  ios_app
+//  AddFlutter2iOSApp
 //
-//  Created by Enzo Lizama on 2/15/20.
+//  Created by Enzo Lizama on 2/23/20.
 //  Copyright © 2020 Enzo Lizama. All rights reserved.
 //
 
 import UIKit
-import Flutter
-import FlutterPluginRegistrant
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
