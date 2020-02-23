@@ -21,6 +21,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding{
+        enabled = true
+    }
     compileOptions {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
@@ -30,7 +33,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Dependencies.kotlin
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation Dependencies.appCompat
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation Dependencies.constraintLayout
     implementation Dependencies.material
@@ -40,9 +43,6 @@ dependencies {
     implementation Dependencies.gson
     implementation Dependencies.coroutineCore
     implementation Dependencies.coroutineAndroid
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation Dependencies.mockk
     androidTestImplementation Dependencies.junit
     implementation project(path: ':flutter')
