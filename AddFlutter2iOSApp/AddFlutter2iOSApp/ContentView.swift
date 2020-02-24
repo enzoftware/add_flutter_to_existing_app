@@ -7,6 +7,10 @@
 //
 
 import SwiftUI
+import Flutter
+import UIKit
+
+
 
 struct QuoteEntity: Codable, Identifiable {
     public var id: String
@@ -46,17 +50,21 @@ class FetchQuotes : ObservableObject{
 }
 
 struct ContentView: View {
+
+    
     @ObservedObject
     var fetch = FetchQuotes()
     
+    @State private var isPresented = false
+
     var body: some View {
         VStack{
             List(fetch.quotes){ quote in
-                VStack(alignment: .leading){
-                    Text(quote.character).font(.system(size: 18))
-                    .foregroundColor(Color.black)
-                    Text(quote.id).font(.system(size: 12))
-                    .foregroundColor(Color.black)
+                 VStack(alignment: .leading){
+                   Text(quote.character).font(.system(size: 18))
+                   .foregroundColor(Color.black)
+                   Text(quote.id).font(.system(size: 12))
+                   .foregroundColor(Color.black)
                 }
                 
             }
