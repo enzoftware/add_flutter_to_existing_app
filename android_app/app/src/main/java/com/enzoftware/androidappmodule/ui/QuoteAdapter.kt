@@ -4,13 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.enzoftware.androidappmodule.R
 import com.enzoftware.androidappmodule.databinding.QuoteItemBinding
 import com.enzoftware.androidappmodule.model.SimpsonsQuote
-import io.flutter.embedding.android.FlutterActivity
 
 
 /**
@@ -18,7 +16,7 @@ import io.flutter.embedding.android.FlutterActivity
  * Contact: lizama.enzo@gmail.com
  */
 
-class QuoteAdapter : RecyclerView.Adapter<QuoteAdapter.QuoteViewHolder>(){
+class QuoteAdapter(val adapterOnClick: QuoteAdapterOnClick) : RecyclerView.Adapter<QuoteAdapter.QuoteViewHolder>(){
 
     private val quotes = ArrayList<SimpsonsQuote>()
 
@@ -39,17 +37,13 @@ class QuoteAdapter : RecyclerView.Adapter<QuoteAdapter.QuoteViewHolder>(){
         notifyDataSetChanged()
     }
 
-    class QuoteViewHolder(itemView: View, private val context: Context): RecyclerView.ViewHolder(itemView){
+    inner class QuoteViewHolder(itemView: View, private val context: Context): RecyclerView.ViewHolder(itemView){
 
         fun bindQuote(quote: SimpsonsQuote){
             val binding = DataBindingUtil.bind<QuoteItemBinding>(itemView)
             binding?.quote = quote
             binding?.quoteCardView?.setOnClickListener {
-                startActivity(
-                    context,
-                    FlutterActivity.createDefaultIntent(context),
-                    null
-                )
+                adapterOnClick.onClick(quote)
             }
         }
 
