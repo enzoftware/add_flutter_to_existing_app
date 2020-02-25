@@ -35,10 +35,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<String> _handlePlatformIncrement(String message) async {
+    final response = await json.decode(message);
     setState(() {
-      _data = json.decode(message);
+      _data = response;
     });
-    // Send an empty message
     return message;
   }
 
@@ -53,18 +53,34 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.network(_data["image"]),
-            Text(
-              ' ${_data["quote"]}',
-            ),
-            Text(
-              _data["character"],
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Image.network(
+                _data["image"] ??
+                    'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/The_Simpsons_Logo.svg/1200px-The_Simpsons_Logo.svg.png',
+              ),
+              SizedBox(height: 16),
+              Text(
+                _data["quote"] ??
+                    "But surely you can't put a price on family...",
+                style: TextStyle(fontSize: 18, color: Colors.black),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    _data["character"] ?? "Simpsons Family",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.end,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
