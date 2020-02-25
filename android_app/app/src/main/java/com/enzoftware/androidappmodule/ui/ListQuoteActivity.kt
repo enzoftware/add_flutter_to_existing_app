@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.enzoftware.androidappmodule.R
@@ -13,12 +11,10 @@ import com.enzoftware.androidappmodule.databinding.ContentMainBinding
 import com.enzoftware.androidappmodule.model.SimpsonsQuote
 import com.google.gson.Gson
 import io.flutter.embedding.android.FlutterActivity
-import io.flutter.embedding.android.FlutterFragment
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.embedding.engine.FlutterEngineCache
 import io.flutter.embedding.engine.dart.DartExecutor
 import io.flutter.plugin.common.BasicMessageChannel
-import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.StringCodec
 import org.koin.android.viewmodel.ext.android.viewModel
 

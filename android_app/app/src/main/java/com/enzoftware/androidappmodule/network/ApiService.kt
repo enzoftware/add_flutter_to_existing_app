@@ -13,5 +13,6 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET("quotes?count=10")
+//    @GET("xbaz0")
     suspend fun getSimpsonsQuotes(): List<SimpsonsQuote>
 }

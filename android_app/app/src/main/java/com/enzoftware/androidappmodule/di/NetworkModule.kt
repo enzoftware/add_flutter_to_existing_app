@@ -20,6 +20,7 @@ import java.util.concurrent.TimeUnit
 private const val CONNECT_TIMEOUT = 15L
 private const val WRITE_TIMEOUT = 15L
 private const val READ_TIMEOUT = 15L
+//const val BASE_URL = "https://api.myjson.com/bins/"
 const val BASE_URL = "https://thesimpsonsquoteapi.glitch.me/"
 val networkModule = module {
     single { Cache(androidApplication().cacheDir, 10L * 1024 * 1024) }
