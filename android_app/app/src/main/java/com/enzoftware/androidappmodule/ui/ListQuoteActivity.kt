@@ -81,9 +81,10 @@ class ListQuoteActivity : AppCompatActivity(), QuoteAdapterOnClick {
 
     override fun onClick(quote: SimpsonsQuote) {
         startActivity(
-            FlutterActivity
-                .withCachedEngine("my_engine_id")
-                .build(this)
+//            FlutterActivity
+//                .withCachedEngine("my_engine_id")
+//                .build(this)
+        FlutterActivity.createDefaultIntent(this)
         )
 
         val mc = BasicMessageChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL, StringCodec.INSTANCE)
